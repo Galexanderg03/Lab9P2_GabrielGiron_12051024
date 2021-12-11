@@ -153,9 +153,10 @@ public class Registro extends javax.swing.JFrame {
         {
             Tipo = "Cliente";
         }
+        
         db.conectar(); 
         try {   
-            db.query.execute("INSERT INTO Usuario" 
+            db.query.execute("INSERT INTO User" 
                     + " (Usuario,Nombre,Contraseña,Edad,Tipo)" 
                     + " VALUES ('" + Usuario + "', '" + Nombre + "','" + Contra + "','" + Edad + "','" + Tipo + "')" ); 
             db.commit();

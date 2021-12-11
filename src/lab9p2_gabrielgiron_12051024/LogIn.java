@@ -7,6 +7,7 @@ package lab9p2_gabrielgiron_12051024;
 
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 
 /**
  *
@@ -117,7 +118,20 @@ public class LogIn extends javax.swing.JFrame {
         String Usuario = Utxt.getText();
         String Contra = Ctxt.getText();
         db.conectar();
-        db.verificar(Usuario, Contra);
+        try
+        {
+            db.query.execute("Select Usuario,Contraseña,Tipo"
+                            +"FROM User");
+            ResultSet rs = db.query.getResultSet();
+            while(rs.next())
+            {
+                 
+            }
+        }
+        catch(SQLException ex)
+        {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_IngresarActionPerformed
 
     /**

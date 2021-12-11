@@ -45,35 +45,5 @@ public class Dba {
            e.printStackTrace();
        }
    }
-   
-   public boolean verificar(String user, String contra)
-   {
-       int V = 0;
-       String sql = "Select Usuario,Contraseña,Tipo"
-                   +"FROM User";
-       try
-       {
-           PreparedStatement pstm = dbcon.prepareStatement(sql);
-           ResultSet res = pstm.executeQuery();
-           while(res.next())
-           {
-               System.out.println(res.getString("Usuario"));
-               System.out.println(res.getString("Contraseña"));
-               System.out.println(res.getString("Tipo"));
-               V = 1;
-           }
-       }
-       catch(SQLException ex)
-       {
-           ex.printStackTrace(); 
-       }
-       if(V == 1)
-       {
-           return true;
-       }
-       else 
-       {
-           return false;
-       }
-   }
+  
 }
